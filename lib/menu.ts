@@ -18,7 +18,6 @@ export interface CustomMenuOverlayStrings extends MenuOverlayStrings {
   about: string;
 }
 
-// TODO Update footer items if needed.
 export function getFooterItems(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[] | CategoryWithSections[]
@@ -28,7 +27,6 @@ export function getFooterItems(
   return items;
 }
 
-// TODO Update menu items if needed.
 export function getMenuItems(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[] | CategoryWithSections[],
@@ -75,6 +73,14 @@ function addMenuItemsInformation(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[]
 ) {
+  categories.forEach(function (category) {
+    if (category.id.toString() == '1500000218381')
+      items.push({
+        key: 'services',
+        label: category.name,
+        href: '/#service-map',
+      });
+  });
   if (categories.length > 0) {
     items.push({
       key: 'information',
