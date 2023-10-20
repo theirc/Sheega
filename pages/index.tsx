@@ -174,7 +174,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   );
 
   services?.sort((a, b) =>
-    a.name.normalize().localeCompare(b.name.normalize())
+    a.name?.normalize().localeCompare(b.name?.normalize())
   );
 
   const serviceTypes = await getDirectusServiceCategories(directus);
