@@ -80,6 +80,7 @@ export default function SearchResultsPage({
       headerLogoProps={getHeaderLogoProps(currentLocale)}
       strings={strings}
       siteUrl={siteUrl}
+      servicesFilter={[1]}
       signpostVersion={publicRuntimeConfig?.version}
       cookieBanner={
         <CookieBanner
