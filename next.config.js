@@ -1,5 +1,6 @@
 const withLess = require('next-with-less');
 const pack = require('./package.json');
+const withPWA = require('next-pwa')({ dest: 'public' });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -35,51 +36,53 @@ const nextConfig = {
   },
 };
 
-module.exports = withLess({
-  ...nextConfig,
-  lessLoaderOptions: {
-    lessOptions: {
-      // See full list of Ant styles here:
-      // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
-      modifyVars: {
-        'primary-color': '#31437C',
-        'secondary-color': '#6286F7',
-        'accent-color': '#3FA7FF',
-        'info-color': '@accent-color',
-        'alert-info-bg-color': '@accent-color',
-        // Override Ant typography.
-        'heading-1-size': '3.75rem',
-        'heading-2-size': '1.875rem',
-        'typography-title-font-weight': '400',
-        // Set height and border radius for 'default' type elements, e.g. buttons, inputs, etc.
-        'height-base': '48px',
-        'height-sm': '32px',
-        'border-radius-base': '10px',
-        'border-color-base': '#141414',
-        // Set header styles.
-        'layout-header-height': 'auto',
-        'layout-header-min-height': '4.375rem',
-        'layout-header-padding': '0',
-        'header-background-color': '#EFEFEF',
-        'header-text-color': '#707070',
-        'header-banner-background-color':
-          'linear-gradient(@secondary-color, @primary-color)',
-        'header-banner-text-color': 'white',
-        // Set search styles.
-        'search-icon-color': 'black',
-        'search-icon-bg-color': '#80C2C2',
-        // Set card styles.
-        'card-padding-base': '16px',
-        'home-page-card-icon-color': '#141414',
-        // Set cookie banner styles.
-        'cookie-banner-text': '#000',
-        'cookie-banner-back': '@accent-color',
-        'link-color': '#0000ee',
-        'link-hover-color': '#0000eea8',
-        // Set locale select page background color
-        'locale-select-background-color':
-          'linear-gradient(@secondary-color, @primary-color)',
+module.exports = withPWA(
+  withLess({
+    ...nextConfig,
+    lessLoaderOptions: {
+      lessOptions: {
+        // See full list of Ant styles here:
+        // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+        modifyVars: {
+          'primary-color': '#31437C',
+          'secondary-color': '#6286F7',
+          'accent-color': '#3FA7FF',
+          'info-color': '@accent-color',
+          'alert-info-bg-color': '@accent-color',
+          // Override Ant typography.
+          'heading-1-size': '3.75rem',
+          'heading-2-size': '1.875rem',
+          'typography-title-font-weight': '400',
+          // Set height and border radius for 'default' type elements, e.g. buttons, inputs, etc.
+          'height-base': '48px',
+          'height-sm': '32px',
+          'border-radius-base': '10px',
+          'border-color-base': '#141414',
+          // Set header styles.
+          'layout-header-height': 'auto',
+          'layout-header-min-height': '4.375rem',
+          'layout-header-padding': '0',
+          'header-background-color': '#EFEFEF',
+          'header-text-color': '#707070',
+          'header-banner-background-color':
+            'linear-gradient(@secondary-color, @primary-color)',
+          'header-banner-text-color': 'white',
+          // Set search styles.
+          'search-icon-color': 'black',
+          'search-icon-bg-color': '#80C2C2',
+          // Set card styles.
+          'card-padding-base': '16px',
+          'home-page-card-icon-color': '#141414',
+          // Set cookie banner styles.
+          'cookie-banner-text': '#000',
+          'cookie-banner-back': '@accent-color',
+          'link-color': '#0000ee',
+          'link-hover-color': '#0000eea8',
+          // Set locale select page background color
+          'locale-select-background-color':
+            'linear-gradient(@secondary-color, @primary-color)',
+        },
       },
     },
-  },
-});
+  })
+);
