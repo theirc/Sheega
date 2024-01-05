@@ -77,5 +77,5 @@ export const SEARCH_RESULTS_PAGE_INDEX: AlgoliaSearchIndex = {
 };
 
 export const DIRECTUS_AUTH_TOKEN = process.env.DIRECTUS_TOKEN ?? '';
-export const DIRECTUS_COUNTRY_ID = 1; // TODO: change to the instance id when created in directus PROD
+export const DIRECTUS_COUNTRY_ID = 12; // TODO: change to the instance id when created in directus PROD
 export const DIRECTUS_INSTANCE = 'https://directus-irc.azurewebsites.net/';
