@@ -266,6 +266,7 @@ export function populateArticleContentStrings(dynamicContent: {
   return {
     textReaderTitle: dynamicContent['default_article_reader_title'],
     shareButtonStrings: getShareButtonStrings(dynamicContent),
+    homeBreadcrumbString: 'Home',
   };
 }
 
@@ -308,6 +309,7 @@ export function populateCategoryStrings(dynamicContent: {
     searchBarStrings: populateSearchBarStrings(dynamicContent),
     footerStrings: populateFooterStrings(dynamicContent),
     selectSubTopicLabel: dynamicContent['default_select_subtopic'],
+    homeBreadcrumbString: 'Home',
   };
 }
 
@@ -319,6 +321,7 @@ export function populateSectionStrings(dynamicContent: {
     selectTopicLabel: getSelectTopicLabel(dynamicContent),
     searchBarStrings: populateSearchBarStrings(dynamicContent),
     footerStrings: populateFooterStrings(dynamicContent),
+    homeBreadcrumbString: 'Home',
   };
 }
 
