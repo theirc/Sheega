@@ -48,9 +48,9 @@ module.exports = withPWA(
         // See full list of Ant styles here:
         // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
         modifyVars: {
-          'primary-color': '#31437C',
-          'secondary-color': '#6286F7',
-          'accent-color': '#3FA7FF',
+          'primary-color': '#38393C',
+          'secondary-color': '#242629',
+          'accent-color': '#FFB500',
           'info-color': '@accent-color',
           'alert-info-bg-color': '@accent-color',
           // Override Ant typography.
@@ -66,14 +66,14 @@ module.exports = withPWA(
           'layout-header-height': 'auto',
           'layout-header-min-height': '4.375rem',
           'layout-header-padding': '0',
-          'header-background-color': '#EFEFEF',
-          'header-text-color': '#707070',
+          'header-background-color': '@secondary-color 8.14%',
+          'header-text-color': 'white',
           'header-banner-background-color':
-            'linear-gradient(@secondary-color, @primary-color)',
+            'linear-gradient(173.7deg, @secondary-color 8.14%, @primary-color 127.84%)',
           'header-banner-text-color': 'white',
           // Set search styles.
-          'search-icon-color': 'black',
-          'search-icon-bg-color': '#80C2C2',
+          'search-icon-color': 'white',
+          'search-icon-bg-color': '@accent-color',
           // Set card styles.
           'card-padding-base': '16px',
           'home-page-card-icon-color': '#141414',
@@ -82,9 +82,6 @@ module.exports = withPWA(
           'cookie-banner-back': '@accent-color',
           'link-color': '#0000ee',
           'link-hover-color': '#0000eea8',
-          // Set locale select page background color
-          'locale-select-background-color':
-            'linear-gradient(@secondary-color, @primary-color)',
         },
       },
     },
