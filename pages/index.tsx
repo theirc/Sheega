@@ -177,7 +177,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     DIRECTUS_COUNTRY_ID
   );
 
-  const uniqueProvidersIdsSet = new Set(services.flatMap((x) => x.provider.id));
+  const uniqueProvidersIdsSet = new Set(services.flatMap((x) => x.provider?.id));
   const uniqueProvidersIdsArray = Array.from(uniqueProvidersIdsSet);
 
   const providers = providersArray
@@ -186,7 +186,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   const enhancedServices = services.map((service) => {
     const providerDetails = providers.find(
-      (provider) => provider.id === service.provider.id
+      (provider) => provider.id === service.provider?.id
     );
     return providerDetails
       ? { ...service, provider: providerDetails }
